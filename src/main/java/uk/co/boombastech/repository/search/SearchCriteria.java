@@ -3,6 +3,7 @@ package uk.co.boombastech.repository.search;
 import uk.co.boombastech.repository.search.comparisons.Comparison;
 import uk.co.boombastech.repository.search.comparisons.ComparisonType;
 
+import javax.persistence.Entity;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,11 +28,11 @@ public abstract class SearchCriteria<T> {
 		return this;
 	}
 
-	public Map<String, List<Comparison>> getCriterion() {
-		return criterion;
-	}
-
 	public <S> SearchCriteria<T> withComparison(String field, ComparisonType comparisonType, S value) {
 		return withComparison(new Comparison<S>(comparisonType, field, value));
+	}
+
+	public Map<String, List<Comparison>> getCriterion() {
+		return criterion;
 	}
 }
