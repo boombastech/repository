@@ -1,6 +1,6 @@
 package uk.co.boombastech.repository.search.comparisons;
 
-public class InvalidComparisonTypeException extends Exception {
+public class InvalidComparisonTypeException extends RuntimeException {
 	private final ComparisonType comparisonType;
 
 	public InvalidComparisonTypeException(ComparisonType comparisonType) {

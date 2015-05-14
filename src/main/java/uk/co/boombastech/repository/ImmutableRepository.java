@@ -5,5 +5,5 @@ import uk.co.boombastech.repository.search.SearchResult;
 import uk.co.boombastech.repository.search.comparisons.InvalidComparisonTypeException;
 
 public interface ImmutableRepository<T> {
-	SearchResult<T> retrieve(SearchCriteria searchCriteria) throws InvalidComparisonTypeException;
+	SearchResult<T> retrieve(SearchCriteria<T> searchCriteria) throws InvalidComparisonTypeException;
 }

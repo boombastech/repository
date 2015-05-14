@@ -23,7 +23,7 @@ public class EbeanImmutableRepository<T> implements ImmutableRepository<T> {
 	}
 
 	@Override
-	public SearchResult<T> retrieve(SearchCriteria searchCriteria) throws InvalidComparisonTypeException {
+	public SearchResult<T> retrieve(SearchCriteria<T> searchCriteria) throws InvalidComparisonTypeException {
 		ExpressionList<T> expressionList = ebeanServer.find(searchCriteria.getItemClass()).where();
 		ExpressionList<T> populatedExpressionList = searchCriteriaEbean.convertSearchCriteria(expressionList, searchCriteria);
 		List<T> list = populatedExpressionList.findList();
